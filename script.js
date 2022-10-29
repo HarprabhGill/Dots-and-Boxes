@@ -1,32 +1,163 @@
-let Circle11= false
-let Circle12= false
-let Circle13 = false
-let Circle14 = false
+let Circle11= false;
+let Circle12= false;
+let Circle13 = false;
+let Circle14 = false;
+let Circle21 = false;
+let Circle22 = false;
+let Circle23 = false;
+let Circle24 = false;
+let Circle31 = false;
+let Circle32 = false;
+let Circle33 = false;
+let Circle34 = false;
+let Circle41 = false;
+let Circle42 = false;
+let Circle43 = false;
+let Circle44 = false;
 
-let Circle21 = false
-let Circle22 = false
-let Circle23 = false
-let Circle24 = false
+let square1 = false;
+let square2 = false;
+let square3 = false;
+let square4 = false;
+let square5 = false;
+let square6 = false;
+let square7 = false;
+let square8 = false;
+let square9 = false;
 
-let Circle31 = false
-let Circle32 = false
-let Circle33 = false
-let Circle34 = false
-
-let Circle41 = false
-let Circle42 = false
-let Circle43 = false
-let Circle44 = false
-
-var boxes = [];
+var boxes = [square1, square2, square3, square4, square5, square6, square7, square8, square9];
 var turn = 0;
 var red = 0;
 var green = 0;
 var yellow = 0;
 
+var line11 = document.getElementById("line11");
+var line12 = document.getElementById("line12");
+var line13 = document.getElementById("line13");
+var line21 = document.getElementById("line21");
+var line22 = document.getElementById("line22");
+var line23 = document.getElementById("line23");
+var line31 = document.getElementById("line31");
+var line32 = document.getElementById("line32");
+var line33 = document.getElementById("line33");
+var line41 = document.getElementById("line41");
+var line42 = document.getElementById("line42");
+var line43 = document.getElementById("line43");
+
+var vline11 = document.getElementById("vline11");
+var vline12 = document.getElementById("vline12");
+var vline13 = document.getElementById("vline13");
+var vline14 = document.getElementById("vline14");
+var vline21 = document.getElementById("vline21");
+var vline22 = document.getElementById("vline22");
+var vline23 = document.getElementById("vline23");
+var vline24 = document.getElementById("vline24");
+var vline31 = document.getElementById("vline31");
+var vline32 = document.getElementById("vline32");
+var vline33 = document.getElementById("vline33");
+var vline34 = document.getElementById("vline34");
+
+function Check(turn) {
+    if(square1 == false){
+        if(line11.style.visibility == "visible" && line21.style.visibility == "visible" && vline11.style.visibility == "visible" && vline12.style.visibility == "visible") {
+            boxes[0] = true;
+            square1 = true;
+        }
+    }
+    if(square2 == false){
+        if(line12.style.visibility == "visible" && line22.style.visibility == "visible" && vline12.style.visibility == "visible" && vline13.style.visibility == "visible") {
+            boxes[1] = true;
+            square2 = true;
+        }
+    }
+    if(square3 == false){
+        if(line13.style.visibility == "visible" && line23.style.visibility == "visible" && vline13.style.visibility == "visible" && vline14.style.visibility == "visible") {
+            boxes[2] = true;
+            square3 = true;
+        }
+    }
+    if(square4 == false){
+        if(line21.style.visibility == "visible" && line31.style.visibility == "visible" && vline21.style.visibility == "visible" && vline22.style.visibility == "visible") {
+            boxes[3] = true;
+            square4 = true;
+        }
+    }
+    if(square5 == false){
+        if(line22.style.visibility == "visible" && line32.style.visibility == "visible" && vline22.style.visibility == "visible" && vline23.style.visibility == "visible") {
+            boxes[4] = true;
+            square5 = true;
+        }
+    }
+    if(square6 == false){
+        if(line23.style.visibility == "visible" && line33.style.visibility == "visible" && vline23.style.visibility == "visible" && vline24.style.visibility == "visible") {
+            boxes[5] = true;
+            square6 = true;
+        }
+    }
+    if(square7 == false){
+        if(line31.style.visibility == "visible" && line41.style.visibility == "visible" && vline31.style.visibility == "visible" && vline32.style.visibility == "visible") {
+            boxes[6] = true;
+            square7 = true;
+        }
+    }
+    if(square8 == false){
+        if(line32.style.visibility == "visible" && line42.style.visibility == "visible" && vline32.style.visibility == "visible" && vline33.style.visibility == "visible") {
+            boxes[7] = true;
+            square8 = true;
+        }
+    }
+    if(square9 == false){
+        if(line33.style.visibility == "visible" && line43.style.visibility == "visible" && vline33.style.visibility == "visible" && vline34.style.visibility == "visible") {
+            boxes[8] = true;
+            square9 = true;
+        }
+    }
+
+    for (let i = 0; i < boxes.length; i++) {
+        if(boxes[i] === true){
+            delete boxes[i];
+            if(turn == 0){
+                red += 1;
+                window.turn -= 1;
+                document.getElementById("p1Score").innerHTML = "Player 1 Score: " + red;
+            }
+            else if(turn == 1){
+                green += 1;
+                window.turn -= 1;
+                document.getElementById("p2Score").innerHTML = "Player 2 Score: " + green;
+            }
+            else if(turn == 2){
+                yellow += 1;
+                window.turn += 2;
+                document.getElementById("p3Score").innerHTML = "Player 3 Score: " + yellow;
+            }
+        }
+    }
+}
 
 function Handler(line){
-    document.getElementById(line).style.visibility = "visible";
+    var temp = document.getElementById(line);
+    if(temp.style.visibility == "visible"){
+        return;
+    }
+    if(turn == 0){
+        temp.style.backgroundColor = "red";
+        temp.style.visibility = "visible";
+        Check(turn);
+        turn +=1;
+    }
+    else if(turn == 1){
+        temp.style.backgroundColor = "green";
+        temp.style.visibility = "visible";
+        Check(turn);
+        turn +=1;
+    }
+    else if(turn == 2){
+        temp.style.backgroundColor = "orange";
+        temp.style.visibility = "visible";
+        Check(turn);
+        turn -= 2;
+    }
 }
 
 document.getElementById("circle11").addEventListener('click',()=>{

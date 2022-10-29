@@ -99,7 +99,7 @@ button{
 
 .line{
     visibility: hidden;
-    height: 3px;
+    height: 4px;
     width: 170px;
     background-color: #bbb;
     float: left;
@@ -108,7 +108,7 @@ button{
 .vline{
     visibility: hidden;
     height: 70px;
-    width: 3px;
+    width: 4px;
     background-color: #bbb;
 }
 
