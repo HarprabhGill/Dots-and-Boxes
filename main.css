@@ -1,0 +1,107 @@
+#wrapper{
+    display: flex;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    top: 0px;
+    left: 0px;
+    background-color: lightblue;
+    flex-direction: column;
+}
+
+#title{
+    color: white;
+    font-size: 60px;
+    text-shadow: 0 0 5px #0000FF;
+}
+
+button{
+    background-color: white;
+    color: white;
+    text-shadow: 0 0 5px #0000FF;
+    border-radius: 10rem;
+    border-color: #0000FF;
+    font-size: 30px;
+    height: 50px;
+    width: 100px;
+}
+
+#playerscores{
+    display: flex;
+    flex-direction: row;
+}
+
+#p1Score{
+    margin-right: 50px;
+    color: red;
+}
+
+#p2Score{
+    margin-right: 50px;
+    color: green;
+}
+
+#p3Score{
+    margin-right: 50px;
+    color: orange;
+}
+
+#border{
+    height: 60vh;
+    width: 70vw;
+    border-style: solid;
+    border-color: #0000FF;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    padding-top: 80px;
+    margin-bottom: 50px;
+}
+
+#rows{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+}
+
+#vrow{
+    display: flex;
+    justify-content: space-between;
+    height: 70px;
+    padding-left: 200px;
+    padding-right: 200px;
+}
+
+.circle {
+    height: 30px;
+    width: 30px;
+    background-color: #bbb;
+    border-radius: 50%;
+    float: left;
+}
+
+.circle:hover {
+    background-color: yellow;
+}
+
+.line{
+    visibility: hidden;
+    height: 3px;
+    width: 170px;
+    background-color: #bbb;
+    float: left;
+}
+
+.vline{
+    visibility: hidden;
+    height: 70px;
+    width: 3px;
+    background-color: #bbb;
+}
+
+.clear{
+    clear: both;
+}
