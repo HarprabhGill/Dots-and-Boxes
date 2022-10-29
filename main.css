@@ -15,6 +15,8 @@
     color: white;
     font-size: 60px;
     text-shadow: 0 0 5px #0000FF;
+    margin-left: 50px;
+    margin-right: 50px;
 }
 
 button{
@@ -25,7 +27,7 @@ button{
     border-color: #0000FF;
     font-size: 30px;
     height: 50px;
-    width: 100px;
+    width: 120px;
 }
 
 #playerscores{
@@ -75,6 +77,14 @@ button{
     padding-right: 200px;
 }
 
+#header{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+
 .circle {
     height: 30px;
     width: 30px;
@@ -105,3 +115,4 @@ button{
 .clear{
     clear: both;
 }
+
