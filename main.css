@@ -11,6 +11,24 @@
     flex-direction: column;
 }
 
+#win{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    flex-direction: column;
+}
+
+#gameboard{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    flex-direction: column;
+}
+
 #title{
     color: white;
     font-size: 60px;
@@ -84,6 +102,14 @@ button{
     align-items: center;
 }
 
+.ranks {
+    color: white;
+    font-size: 35px;
+    text-shadow: 0 0 5px #0000FF;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 20px;
+}
 
 .circle {
     height: 30px;
